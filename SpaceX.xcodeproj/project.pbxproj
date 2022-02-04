@@ -18,7 +18,6 @@
 		FA34651B27ACD03F006143D2 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA34651A27ACD03F006143D2 /* Lato-Semibold.ttf */; };
 		FA34651D27ACEB27006143D2 /* WKWebView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34651C27ACEB27006143D2 /* WKWebView+Helpers.swift */; };
 		FA34651F27ACEBBC006143D2 /* WikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34651E27ACEBBC006143D2 /* WikipediaViewController.swift */; };
-		FA34652127ACF22B006143D2 /* UIView+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34652027ACF22B006143D2 /* UIView+Rounded.swift */; };
 		FA34652C27AD7734006143D2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34652927AD7734006143D2 /* Request.swift */; };
 		FA34652F27AD796E006143D2 /* GetLaunchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34652E27AD796E006143D2 /* GetLaunchesRequest.swift */; };
 		FA34653127AD7B6A006143D2 /* GetRocketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34653027AD7B6A006143D2 /* GetRocketsRequest.swift */; };
@@ -107,7 +106,6 @@
 		FA34651A27ACD03F006143D2 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		FA34651C27ACEB27006143D2 /* WKWebView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Helpers.swift"; sourceTree = "<group>"; };
 		FA34651E27ACEBBC006143D2 /* WikipediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaViewController.swift; sourceTree = "<group>"; };
-		FA34652027ACF22B006143D2 /* UIView+Rounded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rounded.swift"; sourceTree = "<group>"; };
 		FA34652927AD7734006143D2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FA34652E27AD796E006143D2 /* GetLaunchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchesRequest.swift; sourceTree = "<group>"; };
 		FA34653027AD7B6A006143D2 /* GetRocketsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRocketsRequest.swift; sourceTree = "<group>"; };
@@ -219,6 +217,7 @@
 		FA34650B27AC9E62006143D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA79274227AAB0D2002845A1 /* Assets.xcassets */,
 				FA34650C27AC9E72006143D2 /* Font */,
 			);
 			path = Resources;
@@ -291,7 +290,6 @@
 				FA34650B27AC9E62006143D2 /* Resources */,
 				FA79273927AAB0CE002845A1 /* AppDelegate.swift */,
 				FA79273B27AAB0CE002845A1 /* SceneDelegate.swift */,
-				FA79274227AAB0D2002845A1 /* Assets.xcassets */,
 				FA79274427AAB0D2002845A1 /* LaunchScreen.storyboard */,
 				FA79274727AAB0D2002845A1 /* Info.plist */,
 			);
@@ -327,7 +325,6 @@
 		FA79276E27AAB4E1002845A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FA34652027ACF22B006143D2 /* UIView+Rounded.swift */,
 				FA79276F27AAB517002845A1 /* Reactive+Loader.swift */,
 				FA79277127AAB52E002845A1 /* UIView+Loader.swift */,
 				FA79279527AAC93F002845A1 /* UIStoryboard+Helpers.swift */,
@@ -791,7 +788,6 @@
 				FA54627427AD99F6000E5310 /* Constants.swift in Sources */,
 				FA7A96F527AB5C7800977969 /* Payloads.swift in Sources */,
 				FA34652C27AD7734006143D2 /* Request.swift in Sources */,
-				FA34652127ACF22B006143D2 /* UIView+Rounded.swift in Sources */,
 				FA79278E27AAC597002845A1 /* LaunchesViewModel.swift in Sources */,
 				FA7927D127AB1C99002845A1 /* GetRocketsAPIClient.swift in Sources */,
 				FA79279627AAC93F002845A1 /* UIStoryboard+Helpers.swift in Sources */,

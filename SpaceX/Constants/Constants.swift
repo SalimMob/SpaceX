@@ -26,6 +26,7 @@ struct Constants {
             static let navigationBarTitleFont = UIFont.appFont(ofSize: 25, style: .latoBold)
             static let indicatorLabelFont = UIFont.appFont(ofSize: 15, style: .latoMedium)
         }
+        
         struct Rockets {
             static let rocketNameLabelFont = UIFont.appFont(ofSize: 20, style: .latoBold)
             static let rocketNumberLabelFont = UIFont.appFont(ofSize: 20, style: .latoBold)
