@@ -9,6 +9,12 @@ import UIKit
 
 struct Constants {
     
+    struct Strings {
+        struct Launches {
+            static let navigationBarTitle = "Launches"
+        }
+    }
+    
     struct Images {
         static let placeHolderImage = UIImage(named: "placeholder")
         static let searchButtonIcon = UIImage(named: "search")

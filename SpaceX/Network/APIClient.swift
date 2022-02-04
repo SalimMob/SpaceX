@@ -11,6 +11,12 @@ enum Endpoint {
     static let main = "https://api.spacexdata.com/v4"
 }
 
+func printD(_ items: Any...) {
+    #if DEBUG
+    print(items)
+    #endif
+}
+
 class APIClient {
     
     private var session = Session()

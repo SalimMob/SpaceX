@@ -48,7 +48,7 @@ extension LaunchesViewController {
         launchesViewModel.didFinishLoadingData.bind { [weak self] error in
             guard let self = self else { return }
             if let error = error {
-                print(error)
+                printD(error)
             } else {
                 self.reloadCollectionView()
             }
@@ -107,7 +107,7 @@ extension LaunchesViewController {
     }
     
     private func setupComponents() {
-        setLeftAlignTitleView(font: Constants.Fonts.Launches.navigationBarTitleFont, text: "Launches", textColor: .black, leftSpacing: 25)
+        setLeftAlignTitleView(font: Constants.Fonts.Launches.navigationBarTitleFont, text: Constants.Strings.Launches.navigationBarTitle, textColor: .black, leftSpacing: 25)
         bigLaunchImage.layer.cornerRadius = 10.0
         bigLaunchImage.layer.masksToBounds = true
         profileView.layer.cornerRadius = profileView.frame.width / 2
@@ -173,11 +173,11 @@ extension LaunchesViewController {
     }
     
     private func didTapNotifButton() {
-        print("Notification clicked...")
+        printD("Notification clicked...")
     }
     
     private func didTapSearchButton() {
-        print("Search clicked...")
+        printD("Search clicked...")
     }
     
     private func showRocketsScreen(rocketId: String, launchFlightNb: String) {
