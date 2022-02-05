@@ -1,42 +1,34 @@
 //
-//  AlamofireManager.swift
+//  APIClient.swift
 //  SpaceX
 //
-//  Created by Salim Maalouf on 2/2/22.
+//  Created by Salim Maalouf on 2/5/22.
 //
 
-import Alamofire
-
-enum Endpoint {
-    static let main = "https://api.spacexdata.com/v4"
-}
-
-func printD(_ items: Any...) {
-    #if DEBUG
-    print(items)
-    #endif
-}
+import Foundation
 
 class APIClient {
-    
-    private var session = Session()
-    private let timeInterval: TimeInterval = 120 //seconds
-    
-     init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = timeInterval
-        configuration.timeoutIntervalForResource = timeInterval
-        session = Alamofire.Session(configuration: configuration)
-    }
-    
-    func performRequest(forRequest: Request, params: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, success: @escaping (AFDataResponse<Data>) -> (), failure: @escaping (Error) -> ()) {
-        session.request(Endpoint.main + forRequest.path, method: forRequest.method, parameters: params, encoding: encoding, headers: forRequest.headers).validate().responseData { (response) in
-            switch response.result {
-            case .success:
-                success(response)
-            case .failure(let error):
-                failure(error)
+    func getGeneric<T: Codable>(forRequest: Request, success: @escaping (T) -> (), failure: @escaping (Error) -> ()) {
+        AlamofireManager.shared.performRequest(forRequest: forRequest, success: { (response) in
+            if let responseData = response.data {
+                do {
+                    let json = try JSONDecoder().decode(T.self, from: responseData)
+                    success(json)
+                } catch DecodingError.dataCorrupted(let context) {
+                    printD(context)
+                } catch DecodingError.keyNotFound(let key, let context) {
+                    printD("Key '\(key)' not found:", context.debugDescription)
+                    printD("codingPath:", context.codingPath)
+                } catch DecodingError.valueNotFound(let value, let context) {
+                    printD("Value '\(value)' not found:", context.debugDescription)
+                    printD("codingPath:", context.codingPath)
+                } catch DecodingError.typeMismatch(let type, let context) {
+                    printD("Type '\(type)' mismatch:", context.debugDescription)
+                    printD("codingPath:", context.codingPath)
+                } catch {
+                    printD("error: ", error)
+                }
             }
-        }
+        }, failure: failure)
     }
 }
